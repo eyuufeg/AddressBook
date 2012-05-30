@@ -279,3 +279,35 @@
 843  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Store all the information
 1061 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
 1155 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1248 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1498 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1498 [main] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - List all the information
+608  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+718  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+718  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+811  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+811  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Store all the information
+1186 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1467 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1467 [main] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - List all the information
+811  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1029 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1029 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1123 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1123 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Store all the information
+1248 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1529 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1529 [main] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - List all the information
+655  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+873  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+873  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Store all the information
+1092 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1201 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1185 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+1450 [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+1466 [main] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - List all the information
+702  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+873  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+889  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+982  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+982  [main] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Store all the information

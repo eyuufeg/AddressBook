@@ -11,3 +11,14 @@
 11008 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - List all the information
 13575 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Store all the information
 13656 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - Quit the application
+312  [main] INFO  com.ericsson.javatraining.addressbook.MainClass -  AddressBook application starting
+312  [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+328  [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+343  [main] INFO  com.ericsson.javatraining.addressbook.MainClass -  AddressBook application starting
+234  [main] INFO  com.ericsson.javatraining.addressbook.MainClass -  AddressBook application starting
+250  [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Try to read exists xml file 
+281  [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.ReadAndWrite - Succeed to read exists xml file 
+7858 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - List all the information
+17432 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - Find the user with number: 123
+17432 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - Find the user with number: 123
+17432 [pool-2-thread-1] INFO  com.ericsson.javatraining.addressbook.AddrBookImp - Find the user with number: 123

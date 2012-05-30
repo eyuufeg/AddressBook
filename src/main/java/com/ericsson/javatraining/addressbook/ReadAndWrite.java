@@ -116,7 +116,7 @@ public class ReadAndWrite {
     }
 
     /**
-     * this method used to store info to xml
+     * this method used to store info to xml file
      * 
      * @throws IOException
      */

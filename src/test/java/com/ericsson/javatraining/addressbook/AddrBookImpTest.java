@@ -24,23 +24,8 @@ public class AddrBookImpTest {
     @Before
     public void setUp() throws Exception {
 
-        // addrbookimpmock = mock(AddrBookImp.class);
-        // readandwritemock = mock(ReadAndWrite.class);
-        // whenNew(ReadAndWrite.class).withNoArguments().thenReturn(readandwritemock);
-        // whenNew(AddrBookImp.class).withNoArguments().thenReturn(addrbookimpmock);
         addrbookimp = new AddrBookImp();
     }
-
-
-
-    // @Test
-    // public void testadd() {
-    // doReturn(number).when(addrbookimpmock).getString("Enter number: ");
-    // doReturn(address).when(addrbookimpmock).getString("Enter address: ");
-    // ReadAndWrite book = new ReadAndWrite();
-    // addrbookimpmock.add(name, book);
-    // }
-
 
 
     @Test
@@ -49,7 +34,7 @@ public class AddrBookImpTest {
         ReadAndWrite book = new ReadAndWrite();
         addrbookimp.find(number, book);
         addrbookimp.list(book);
-        // addrbookimp.quit(book);
+
     }
 
     @Test

@@ -15,7 +15,6 @@ public class CommandProcess {
     public void process() {
         String cmd = addrbookimpl.getString("Please input your command: ");
         if (cmd.startsWith("add ")) {
-
             addrbookimpl.add(cmd.substring(cmd.indexOf(' ') + 1), addressbook);
 
         } else if (cmd.startsWith("find ")) {

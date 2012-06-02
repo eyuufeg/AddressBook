@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <substitutionProperty name="log.base" value="./AddressBook" />
+    <substitutionProperty name="log.base" value="./logs/AddressBook" />
 
     
 

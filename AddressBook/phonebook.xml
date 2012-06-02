@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><addressbook>
+  <record>
+    <name>a</name>
+    <number>123</number>
+    <address>shanghai</address>
+  </record>
+  <record>
+    <name>b</name>
+    <number>123</number>
+    <address>beijing</address>
+  </record>
+  <record>
+    <name>c</name>
+    <number>123</number>
+    <address>nanjing</address>
+</record>
+  </addressbook>

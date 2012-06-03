@@ -20,9 +20,9 @@ public class PhoneModuleTest {
     @Test
     public void testConstructor() {
         phonemodule = new PhoneModule("name::number::address");
-        assertEquals("name", phonemodule.name);
-        assertEquals("number", phonemodule.number);
-        assertEquals("address", phonemodule.address);
+        assertEquals("field name", "name", phonemodule.name);
+        assertEquals("field number", "number", phonemodule.number);
+        assertEquals("field address", "address", phonemodule.address);
     }
 
     @Test
@@ -31,8 +31,8 @@ public class PhoneModuleTest {
         phonemodule.setAddress("address");
         phonemodule.setName("name");
         phonemodule.setNumber("number");
-        assertEquals("name", phonemodule.getName());
-        assertEquals("number", phonemodule.getNumber());
-        assertEquals("address", phonemodule.getAddress());
+        assertEquals("function getName", "name", phonemodule.getName());
+        assertEquals("function getNumber", "number", phonemodule.getNumber());
+        assertEquals("function getAddress", "address", phonemodule.getAddress());
     }
 }

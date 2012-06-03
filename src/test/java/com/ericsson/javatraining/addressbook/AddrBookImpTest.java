@@ -30,15 +30,13 @@ public class AddrBookImpTest {
 
     @Test
     public void testlist() {
-
         ReadAndWrite book = new ReadAndWrite();
         addrbookimp.find(number, book);
         addrbookimp.list(book);
-
     }
 
     @Test
     public void testconvert() {
-        assertEquals("Ema", addrbookimp.convert(name));
+        assertEquals("first letter of return value should be upper case", "Ema", addrbookimp.convert(name));
     }
 }

@@ -9,13 +9,13 @@ import org.slf4j.LoggerFactory;
 public class AddrBookImp {
     final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
     public AddrBookImp() {
-        System.out.println("################ADDRESS BOOK APPLICATION STARTING################");
-        System.out.println("######################USAGE OF THE COMMANDS######################");
-        System.out.println("add <name>");
-        System.out.println("find <number>");
-        System.out.println("list");
-        System.out.println("quit");
-        System.out.println("#################################################################");
+        System.out.println("****************ADDRESS BOOK APPLICATION STARTING****************");
+        System.out.println("****************USAGE OF THE COMMANDS            ****************");
+        System.out.println("                add <name>                                       ");
+        System.out.println("                find <number>                                    ");
+        System.out.println("                list                                             ");
+        System.out.println("                quit                                             ");
+        System.out.println("*****************************************************************");
     }
 
     public void add(String name, ReadAndWrite book) {

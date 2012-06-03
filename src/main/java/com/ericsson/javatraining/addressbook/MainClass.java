@@ -10,16 +10,13 @@ public class MainClass {
     public static void main(String[] args) {
         final Logger logger = LoggerFactory.getLogger(MainClass.class);
         logger.info(" AddressBook application starting");
-
         ExecutorService service = Executors.newSingleThreadExecutor();
         service.execute(new Runnable() {
-
             public void run() {
                 final CommandProcess cmdprocessing = new CommandProcess();
                 while (true) {
                     cmdprocessing.process();
                 }
-
             }
         });
         service.shutdown();

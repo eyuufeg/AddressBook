@@ -26,7 +26,6 @@ import org.xml.sax.SAXException;
 
 public class ReadAndWrite {
     final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
-
     private int size = 0;
     private int tempsize = 0;
     private PhoneModule[] phones = new PhoneModule[100];
@@ -42,13 +41,11 @@ public class ReadAndWrite {
     public ReadAndWrite() {
 
         try {
-
             logger.info("Try to read exists xml file ");
             read();
-
             logger.info("Succeed to read exists xml file ");
         } catch (IOException e) {
-            logger.error("Fail to read exists xml file ");
+            logger.error("Fail to read exists xml file", e);
         }
     }
 
@@ -95,13 +92,12 @@ public class ReadAndWrite {
 
             }
 
-            System.out.println("Try to read exists xml file ");
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            logger.error("ParserConfigurationException ", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("IOException ", e);
         } catch (SAXException e) {
-            e.printStackTrace();
+            logger.error("SAXException ", e);
         }
 
         for (int i = 0; i < recordlist.size(); i++) {
@@ -150,14 +146,11 @@ public class ReadAndWrite {
             StreamResult result = new StreamResult(new java.io.File(FILENAME));
             transformer.transform(source, result);
         } catch (TransformerConfigurationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("TransformerConfigurationException ", e);
         } catch (TransformerFactoryConfigurationError e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("TransformerFactoryConfigurationError ", e);
         } catch (TransformerException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("TransformerException ", e);
         }
 
     }

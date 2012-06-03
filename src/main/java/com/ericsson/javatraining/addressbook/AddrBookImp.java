@@ -57,6 +57,7 @@ public class AddrBookImp {
         try {
             book.store();
         } catch (IOException e) {
+            logger.error("Failed to store the information to xml", e);
         }
         logger.info("Quit the application");
         System.exit(0);
@@ -64,7 +65,6 @@ public class AddrBookImp {
 
     public String getString(String tip) {
         System.out.print(tip);
-
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
     }

@@ -1,4 +1,4 @@
-package com.ericsson.javatraining.addressbook;
+package com.ericsson.javatraining.addressbooktest;
 
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -10,6 +10,10 @@ import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.LoggerFactory;
+
+import com.ericsson.javatraining.addressbook.AddrBookImp;
+import com.ericsson.javatraining.addressbook.CommandProcess;
+import com.ericsson.javatraining.addressbook.ReadAndWrite;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ LoggerFactory.class, CommandProcess.class, ReadAndWrite.class })

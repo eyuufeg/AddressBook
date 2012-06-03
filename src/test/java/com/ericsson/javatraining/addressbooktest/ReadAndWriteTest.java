@@ -1,4 +1,4 @@
-package com.ericsson.javatraining.addressbook;
+package com.ericsson.javatraining.addressbooktest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,6 +11,10 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.ericsson.javatraining.addressbook.AddrBookImp;
+import com.ericsson.javatraining.addressbook.PhoneModule;
+import com.ericsson.javatraining.addressbook.ReadAndWrite;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ ReadAndWrite.class, LoggerFactory.class })
 public class ReadAndWriteTest {

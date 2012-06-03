@@ -1,4 +1,4 @@
-package com.ericsson.javatraining.addressbook;
+package com.ericsson.javatraining.addressbooktest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.LoggerFactory;
+
+import com.ericsson.javatraining.addressbook.PhoneModule;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ PhoneModuleTest.class, LoggerFactory.class })
 public class PhoneModuleTest {
@@ -20,9 +22,9 @@ public class PhoneModuleTest {
     @Test
     public void testConstructor() {
         phonemodule = new PhoneModule("name::number::address");
-        assertEquals("field name", "name", phonemodule.name);
-        assertEquals("field number", "number", phonemodule.number);
-        assertEquals("field address", "address", phonemodule.address);
+        assertEquals("field name", "name", phonemodule.getName());
+        assertEquals("field number", "number", phonemodule.getNumber());
+        assertEquals("field address", "address", phonemodule.getAddress());
     }
 
     @Test

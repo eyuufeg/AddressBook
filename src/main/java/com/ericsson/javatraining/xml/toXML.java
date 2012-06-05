@@ -19,6 +19,7 @@ import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 public class toXML {
     private static final Logger logger = LoggerFactory.getLogger(toXML.class);
@@ -55,36 +56,41 @@ public class toXML {
     public Document createDocumentTree() throws IOException {
         logger.info("Store all the information");
 
-            try {
-                DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-                document = docBuilder.newDocument();
-                for (PhoneModule phone : data.getPhones()) {
+        try {
+            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            document = docBuilder.parse(FILENAME);
+            root = document.getDocumentElement();
+            for (PhoneModule phone : data.gettempPhones()) {
 
-                    if (phone != null) {
-                        Node addrecord = document.createElement("record");
-                        root.appendChild(addrecord);
+                if (phone != null) {
+                    Node addrecord = document.createElement("record");
+                    root.appendChild(addrecord);
 
-                        Element addname = document.createElement("name");
-                        addname.setTextContent(phone.getName());
-                        addrecord.appendChild(addname);
+                    Element addname = document.createElement("name");
+                    addname.setTextContent(phone.getName());
+                    addrecord.appendChild(addname);
 
-                        Element addnumber = document.createElement("number");
-                        addnumber.setTextContent(phone.getNumber());
-                        addrecord.appendChild(addnumber);
+                    Element addnumber = document.createElement("number");
+                    addnumber.setTextContent(phone.getNumber());
+                    addrecord.appendChild(addnumber);
 
-                        Element addaddress = document.createElement("address");
-                        addaddress.setTextContent(phone.getAddress());
-                        addrecord.appendChild(addaddress);
-                    }
+                    Element addaddress = document.createElement("address");
+                    addaddress.setTextContent(phone.getAddress());
+                    addrecord.appendChild(addaddress);
                 }
-            } catch (DOMException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (ParserConfigurationException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+                    }
+        } catch (DOMException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SAXException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+                }
+
 
         return document;
     }

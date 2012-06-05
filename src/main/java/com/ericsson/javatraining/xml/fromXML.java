@@ -23,7 +23,7 @@ public class fromXML {
     private Element root;
     private Data data = Data.getInstance();
     private toXML toxml = new toXML();
-    private XmlDocument xmldocument = new XmlDocument();
+
     /**
      * initialize phones
      */
@@ -44,15 +44,14 @@ public class fromXML {
     public void read() throws IOException {
         File f = new File(FILENAME);
         if (!f.exists()) {
+            System.out.println("!!!!!!!!!!!!");
             logger.info("The file :" + FILENAME + "is not exists");
             logger.warn("Please create" + FILENAME);
             toxml.createBasicDocument();
-            
             return;
         }
 
         else {
-
             try {
                 DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
@@ -81,7 +80,7 @@ public class fromXML {
             }
 
         } 
-      
+        System.out.println("!!!!!!!!!!!!");
         for (int i = 0; i < recordlist.size(); i++) {
             if (recordlist.get(i).trim().length() > 0) {
                 PhoneModule phone = new PhoneModule(recordlist.get(i).trim());
@@ -89,8 +88,7 @@ public class fromXML {
 
             }
         }
-        xmldocument.setDocument(document);
-        xmldocument.setRoot(root);
+
         }
 }
 

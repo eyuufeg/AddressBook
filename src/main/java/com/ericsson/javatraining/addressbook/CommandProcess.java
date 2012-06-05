@@ -7,16 +7,15 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.ericsson.javatraining.implement.AddrBookImp;
+import com.ericsson.javatraining.xml.fromXML;
 import com.ericsson.javatraining.xml.toXML;
 
 public class CommandProcess {
 
     private static final Logger logger = LoggerFactory.getLogger(CommandProcess.class);
-
     private toXML toxml = new toXML();
-    // private ReadAndWrite readandwrite = new ReadAndWrite();
     private AddrBookImp addrbookimpl = new AddrBookImp();
-
+    private fromXML fromxml = new fromXML();
     public void process() {
         while (true) {
             String cmd = addrbookimpl.getString("Please input your command: ");

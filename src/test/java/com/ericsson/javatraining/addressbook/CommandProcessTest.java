@@ -11,9 +11,8 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.LoggerFactory;
 
-import com.ericsson.javatraining.addressbook.AddrBookImp;
-import com.ericsson.javatraining.addressbook.CommandProcess;
-import com.ericsson.javatraining.addressbook.ReadAndWrite;
+import com.ericsson.javatraining.implement.AddrBookImp;
+import com.ericsson.javatraining.xml.ReadAndWrite;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ LoggerFactory.class, CommandProcess.class, ReadAndWrite.class })
@@ -23,7 +22,7 @@ public class CommandProcessTest {
     private static String findcommand = "find ema";
     private static String quitcommand = "quit";
     AddrBookImp addrbookimpmock;
-    ReadAndWrite readandwritemock;
+    com.ericsson.javatraining.xml.ReadAndWrite readandwritemock;
 
     @Before
     public void setUp() throws Exception {

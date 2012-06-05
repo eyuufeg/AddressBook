@@ -29,8 +29,8 @@ public class ReadAndWrite {
     private static final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
     private List<String> recordlist = new ArrayList<String>();
     private String FILENAME = "phonebook.xml";
-    private Document document;
-    private Element root;
+    private Document document = null;
+    private Element root = null;
     private Data data = Data.getInstance();
     /**
      * initialize phones
@@ -56,10 +56,13 @@ public class ReadAndWrite {
         if (!f.exists()) {
             logger.info("The file :" + FILENAME + "is not exists");
             logger.warn("Please create" + FILENAME);
+
             return;
         }
 
-        try {
+        else {
+            try {
+
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
             document = docBuilder.parse(FILENAME);
@@ -97,7 +100,7 @@ public class ReadAndWrite {
 
             }
         }
-
+        }
 
     }
 

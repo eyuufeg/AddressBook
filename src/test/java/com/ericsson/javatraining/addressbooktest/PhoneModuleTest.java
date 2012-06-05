@@ -4,14 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-import org.slf4j.LoggerFactory;
 
 import com.ericsson.javatraining.addressbook.PhoneModule;
-@RunWith(PowerMockRunner.class)
-@PrepareForTest({ PhoneModuleTest.class, LoggerFactory.class })
+
 public class PhoneModuleTest {
     PhoneModule phonemodule;
     @Before

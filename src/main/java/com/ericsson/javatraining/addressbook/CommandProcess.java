@@ -4,14 +4,17 @@ import java.io.IOException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
 
 import com.ericsson.javatraining.implement.AddrBookImp;
-import com.ericsson.javatraining.xml.ReadAndWrite;
+import com.ericsson.javatraining.xml.toXML;
 
 public class CommandProcess {
 
-    private static final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
-    private ReadAndWrite readandwrite = new ReadAndWrite();
+    private static final Logger logger = LoggerFactory.getLogger(CommandProcess.class);
+
+    private toXML toxml = new toXML();
+    // private ReadAndWrite readandwrite = new ReadAndWrite();
     private AddrBookImp addrbookimpl = new AddrBookImp();
 
     public void process() {
@@ -26,7 +29,8 @@ public class CommandProcess {
             else if (cmd.equals("quit")) {
                 addrbookimpl.quit();
                 try {
-                    readandwrite.store();
+                    Document document = toxml.createDocumentTree();
+                    toxml.toxml(document);
                 } catch (IOException e) {
                     logger.error("failed to store data ", e);
                 }

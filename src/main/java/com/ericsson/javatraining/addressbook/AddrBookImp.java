@@ -59,7 +59,7 @@ public class AddrBookImp {
             logger.error("Failed to store the information to xml", e);
         }
         logger.info("Quit the application");
-        System.exit(0);
+        return;
     }
 
     public String getString(String tip) {

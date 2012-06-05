@@ -7,9 +7,6 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ericsson.javatraining.addressbook.PhoneModule;
-import com.ericsson.javatraining.addressbook.ReadAndWrite;
-
 public class ReadAndWriteTest {
 
     ReadAndWrite readandwrite;
@@ -24,8 +21,8 @@ public class ReadAndWriteTest {
         PhoneModule phone = new PhoneModule("ema::123::shanghai");
         readandwrite.addPhone(phone);
         readandwrite.addtempPhone(phone);
-        assertEquals(phone, readandwrite.getPhone("ema"));
-        assertEquals(phone, readandwrite.gettempPhone("ema"));
+        assertEquals("it should return phone", phone, readandwrite.getPhone("ema"));
+        assertEquals("return phone", phone, readandwrite.gettempPhone("ema"));
     }
 
     @Test

@@ -20,9 +20,7 @@ public class MainClass {
         service.execute(new Runnable() {
             public void run() {
                 final CommandProcess cmdprocessing = new CommandProcess();
-                while (true) {
                     cmdprocessing.process();
-                }
             }
         });
         service.shutdownNow();

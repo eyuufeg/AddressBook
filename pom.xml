@@ -82,7 +82,8 @@
             </ignores>
             <excludes>
               <!-- ignore main -->
-              <exclude>com/ericsson/javatraining/addressbook/MainClass.class</exclude>           
+              <exclude>com/ericsson/javatraining/addressbook/MainClass.class</exclude>   
+              <exclude>com/ericsson/javatraining/addressbook/MainClass.class</exclude>         
             </excludes>
           </instrumentation>
           <check />

@@ -5,6 +5,12 @@ import java.util.concurrent.Executors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+/**
+ * @author eyuufeg
+ * 
+ * 
+ */
 public class MainClass {
 
     public static void main(String[] args) {
@@ -19,6 +25,6 @@ public class MainClass {
                 }
             }
         });
-        service.shutdown();
+        service.shutdownNow();
     }
 }

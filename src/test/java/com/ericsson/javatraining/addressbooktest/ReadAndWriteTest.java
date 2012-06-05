@@ -19,35 +19,39 @@ import com.ericsson.javatraining.addressbook.ReadAndWrite;
 @PrepareForTest({ ReadAndWrite.class, LoggerFactory.class })
 public class ReadAndWriteTest {
     final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
-    ReadAndWrite readandwritemock;
+    ReadAndWrite readandwrite;
     @Before
     public void setUp() throws Exception {
-
-        // readandwritemock = mock(ReadAndWrite.class);
-        // whenNew(ReadAndWrite.class).withNoArguments().thenReturn(readandwritemock);
+        readandwrite = new ReadAndWrite();
     }
 
     @Test
     public void testAddAndGetphone() {
-        readandwritemock = new ReadAndWrite();
-        PhoneModule phone = new PhoneModule("ema::ema::ema");
-        readandwritemock.addPhone(phone);
-        readandwritemock.addtempPhone(phone);
-        assertEquals(phone, readandwritemock.getPhone("ema"));
-        assertEquals(phone, readandwritemock.gettempPhone("ema"));
+
+        PhoneModule phone = new PhoneModule("ema::123::shanghai");
+        readandwrite.addPhone(phone);
+        readandwrite.addtempPhone(phone);
+        assertEquals(phone, readandwrite.getPhone("ema"));
+        assertEquals(phone, readandwrite.gettempPhone("ema"));
     }
 
     @Test
     public void teststore() {
-
-        readandwritemock = new ReadAndWrite();
         try {
-            readandwritemock.store();
+            readandwrite.store();
+        } catch (IOException e) {
+            System.out.println("IOException");
+        }
+    }
+
+    @Test
+    public void testread() {
+        try {
+            readandwrite.read();
         } catch (IOException e) {
             System.out.println("IOException");
         }
 
 
     }
-
 }

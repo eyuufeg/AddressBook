@@ -2,7 +2,7 @@ package com.ericsson.javatraining.addressbook;
 
 public class PhoneModule {
 
-    String name, number, address;
+    private String name, number, address;
 
     public PhoneModule() {
 

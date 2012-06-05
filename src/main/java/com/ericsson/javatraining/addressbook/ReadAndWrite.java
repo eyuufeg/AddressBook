@@ -37,7 +37,7 @@ public class ReadAndWrite {
     private Element root;
 
     /**
-     * initialize phones
+     * initialize phonesr
      */
     public ReadAndWrite() {
 
@@ -76,21 +76,14 @@ public class ReadAndWrite {
                 NodeList recordChild = recordNode.getChildNodes();
                 String recordstring = "";
                 for (int j = 0; j < recordChild.getLength(); j++) {
-
                     Node recordChildNode = recordChild.item(j);
-
                     if (recordChildNode instanceof Element) {
                         Element recordChildElement = (Element) recordChildNode;
-
                         String text = ((Text) recordChildElement.getFirstChild()).getData().trim();
-
                         recordstring = recordstring + text + "::";
                     }
-
                 }
-
                 recordlist.add(recordstring);
-
             }
 
         } catch (ParserConfigurationException e) {
@@ -126,24 +119,22 @@ public class ReadAndWrite {
                 root.appendChild(addrecord);
 
                 Element addname = document.createElement("name");
-                addname.setTextContent(phone.name);
+                addname.setTextContent(phone.getName());
                 addrecord.appendChild(addname);
 
                 Element addnumber = document.createElement("number");
-                addnumber.setTextContent(phone.number);
+                addnumber.setTextContent(phone.getNumber());
                 addrecord.appendChild(addnumber);
 
                 Element addaddress = document.createElement("address");
-                addaddress.setTextContent(phone.address);
+                addaddress.setTextContent(phone.getAddress());
                 addrecord.appendChild(addaddress);
-                } else
-                    continue;
+            }
             }
 
         try {
             TransformerFactory tFactory = TransformerFactory.newInstance();
             Transformer transformer = tFactory.newTransformer();
-
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new java.io.File(FILENAME));
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -175,7 +166,7 @@ public class ReadAndWrite {
             if (phone == null) {
                 continue;
             }
-            if (phone.name.equalsIgnoreCase(name)) {
+            if (phone.getName().equalsIgnoreCase(name)) {
                 return phone;
             }
         }
@@ -187,13 +178,14 @@ public class ReadAndWrite {
             if (phone == null) {
                 continue;
             }
-            if (phone.name.equalsIgnoreCase(name)) {
+            if (phone.getName().equalsIgnoreCase(name)) {
                 return phone;
             }
         }
         return null;
     }
     public PhoneModule[] getPhones() {
+        
         return phones;
     }
 }

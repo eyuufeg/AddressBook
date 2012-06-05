@@ -20,9 +20,9 @@ public class AddrBookImp {
 
     public void add(String name, ReadAndWrite book) {
         PhoneModule phone = new PhoneModule();
-        phone.name = convert(name);
-        phone.number = getString("Enter number: ");
-        phone.address = getString("Enter address: ");
+        phone.setName(convert(name));
+        phone.setNumber(getString("Enter number: "));
+        phone.setAddress(getString("Enter address: "));
         book.addPhone(phone);
         book.addtempPhone(phone);
         logger.info("Add a new user");
@@ -32,7 +32,7 @@ public class AddrBookImp {
 
         for (PhoneModule phone : book.getPhones()) {
             if (phone != null) {
-                if (phone.number.indexOf(number) < 0) {
+                if (phone.getNumber().indexOf(number) < 0) {
                     continue;
                 } else {
                     logger.info("Find the user with number: " + number);
@@ -46,7 +46,6 @@ public class AddrBookImp {
     public void list(ReadAndWrite book) {
         for (PhoneModule phone : book.getPhones()) {
             if (phone != null) {
-
                 System.out.println(phone);
             }
         }

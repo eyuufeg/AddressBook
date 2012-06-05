@@ -1,6 +1,7 @@
 package com.ericsson.javatraining.addressbooktest;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,23 +11,24 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.LoggerFactory;
 
 import com.ericsson.javatraining.addressbook.AddrBookImp;
+import com.ericsson.javatraining.addressbook.PhoneModule;
 import com.ericsson.javatraining.addressbook.ReadAndWrite;
-
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ AddrBookImp.class, ReadAndWrite.class, LoggerFactory.class })
 public class AddrBookImpTest {
     String name = "EMA";
     String number = "number";
     String address = "address";
+    PhoneModule phone = new PhoneModule(name + "::" + number + "::" + address);
     ReadAndWrite readandwritemock;
     /**
      * 
      */
-    AddrBookImp addrbookimpmock;
     AddrBookImp addrbookimp;
     @Before
     public void setUp() throws Exception {
-
+        readandwritemock = mock(ReadAndWrite.class);
+        // when(readandwritemock.addPhone(phone)).thenReturn(true);
         addrbookimp = new AddrBookImp();
     }
 

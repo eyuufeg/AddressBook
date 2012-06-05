@@ -56,6 +56,7 @@ public class ReadAndWrite {
         if (!f.exists()) {
             logger.info("The file :" + FILENAME + "is not exists");
             logger.warn("Please create" + FILENAME);
+            f.createNewFile();
 
             return;
         }

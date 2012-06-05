@@ -7,12 +7,10 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ericsson.javatraining.addressbook.PhoneModule;
-import com.ericsson.javatraining.xml.ReadAndWrite;
-
 public class ReadAndWriteTest {
 
     ReadAndWrite readandwrite;
+    private Data data = Data.getInstance();
     @Before
     public void setUp() throws Exception {
         readandwrite = new ReadAndWrite();
@@ -22,10 +20,10 @@ public class ReadAndWriteTest {
     public void testAddAndGetphone() {
 
         PhoneModule phone = new PhoneModule("ema::123::shanghai");
-        readandwrite.addPhone(phone);
-        readandwrite.addtempPhone(phone);
-        assertEquals("it should return phone", phone, readandwrite.getPhone("ema"));
-        assertEquals("return phone", phone, readandwrite.gettempPhone("ema"));
+        data.addPhone(phone);
+        data.addtempPhone(phone);
+        assertEquals("it should return phone", phone, data.getPhone("ema"));
+        assertEquals("return phone", phone, data.gettempPhone("ema"));
     }
 
     @Test

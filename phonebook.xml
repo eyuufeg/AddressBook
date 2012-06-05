@@ -20,4 +20,19 @@
     <number>d</number>
     <address>d</address>
   </record>
+<record>
+    <name>J</name>
+    <number>d</number>
+    <address>d</address>
+  </record>
+<record>
+    <name>Yu</name>
+    <number>d</number>
+    <address>g</address>
+  </record>
+<record>
+    <name>H</name>
+    <number>f</number>
+    <address>f</address>
+  </record>
 </addressbook>

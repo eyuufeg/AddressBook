@@ -25,21 +25,15 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
-import com.ericsson.javatraining.addressbook.PhoneModule;
-
 public class ReadAndWrite {
     private static final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
-    private int size = 0;
-    private int tempsize = 0;
-    private PhoneModule[] phones = new PhoneModule[100];
-    private PhoneModule[] tempphones = new PhoneModule[100];
     private List<String> recordlist = new ArrayList<String>();
     private String FILENAME = "phonebook.xml";
     private Document document;
     private Element root;
-
+    private Data data = Data.getInstance();
     /**
-     * initialize phonesr
+     * initialize phones
      */
     public ReadAndWrite() {
 
@@ -99,7 +93,7 @@ public class ReadAndWrite {
         for (int i = 0; i < recordlist.size(); i++) {
             if (recordlist.get(i).trim().length() > 0) {
                 PhoneModule phone = new PhoneModule(recordlist.get(i).trim());
-                addPhone(phone);
+                data.addPhone(phone);
 
             }
         }
@@ -114,7 +108,7 @@ public class ReadAndWrite {
      */
     public void store() throws IOException {
         logger.info("Store all the information");
-        for (PhoneModule phone : tempphones) {
+        for (PhoneModule phone : data.gettempPhones()) {
 
             if (phone != null) {
                 Node addrecord = document.createElement("record");
@@ -152,43 +146,6 @@ public class ReadAndWrite {
 
     }
 
-    public void addPhone(PhoneModule phone) {
-        phones[size++] = phone;
-    }
 
-    /**
-     * tempphones used to save the new add info
-     */
-    public void addtempPhone(PhoneModule phone) {
-        tempphones[tempsize++] = phone;
-    }
-
-    public PhoneModule getPhone(String name) {
-        for (PhoneModule phone : phones) {
-            if (phone == null) {
-                continue;
-            }
-            if (phone.getName().equalsIgnoreCase(name)) {
-                return phone;
-            }
-        }
-        return null;
-    }
-
-    public PhoneModule gettempPhone(String name) {
-        for (PhoneModule phone : tempphones) {
-            if (phone == null) {
-                continue;
-            }
-            if (phone.getName().equalsIgnoreCase(name)) {
-                return phone;
-            }
-        }
-        return null;
-    }
-    public PhoneModule[] getPhones() {
-        
-        return phones;
-    }
 }
 

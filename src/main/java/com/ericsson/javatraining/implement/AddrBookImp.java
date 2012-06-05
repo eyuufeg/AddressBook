@@ -1,16 +1,16 @@
 package com.ericsson.javatraining.implement;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ericsson.javatraining.addressbook.PhoneModule;
-import com.ericsson.javatraining.xml.ReadAndWrite;
+import com.ericsson.javatraining.xml.Data;
+import com.ericsson.javatraining.xml.PhoneModule;
 
 public class AddrBookImp {
     private static final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
+    private Data data = Data.getInstance();
     public AddrBookImp() {
         System.out.println("****************ADDRESS BOOK APPLICATION STARTING****************");
         System.out.println("****************USAGE OF THE COMMANDS            ****************");
@@ -21,19 +21,19 @@ public class AddrBookImp {
         System.out.println("*****************************************************************");
     }
 
-    public void add(String name, ReadAndWrite book) {
+    public void add(String name) {
         PhoneModule phone = new PhoneModule();
         phone.setName(convert(name));
         phone.setNumber(getString("Enter number: "));
         phone.setAddress(getString("Enter address: "));
-        book.addPhone(phone);
-        book.addtempPhone(phone);
+        data.addPhone(phone);
+        data.addtempPhone(phone);
         logger.info("Add a new user");
     }
 
-    public void find(String number, ReadAndWrite book) {
+    public void find(String number) {
 
-        for (PhoneModule phone : book.getPhones()) {
+        for (PhoneModule phone : data.getPhones()) {
             if (phone != null) {
                 if (phone.getNumber().indexOf(number) < 0) {
                     continue;
@@ -46,8 +46,8 @@ public class AddrBookImp {
 
     }
 
-    public void list(ReadAndWrite book) {
-        for (PhoneModule phone : book.getPhones()) {
+    public void list() {
+        for (PhoneModule phone : data.getPhones()) {
             if (phone != null) {
                 System.out.println(phone);
             }
@@ -55,12 +55,7 @@ public class AddrBookImp {
         logger.info("List all the information");
     }
 
-    public void quit(ReadAndWrite book) {
-        try {
-            book.store();
-        } catch (IOException e) {
-            logger.error("Failed to store the information to xml", e);
-        }
+    public void quit() {
         logger.info("Quit the application");
         return;
     }

@@ -26,8 +26,8 @@ public class AddrBookImpTest {
     @Test
     public void testlist() {
 
-        addrbookimp.find(number, book);
-        addrbookimp.list(book);
+        addrbookimp.find(number);
+        addrbookimp.list();
     }
 
     @Test

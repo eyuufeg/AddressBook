@@ -18,25 +18,26 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
-import org.xml.sax.SAXException;
 
 public class ReadAndWrite {
     private static final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
     private List<String> recordlist = new ArrayList<String>();
     private String FILENAME = "phonebook.xml";
-    private Document document = null;
-    private Element root = null;
+    private Document document;
+    private Element root;
     private Data data = Data.getInstance();
+
     /**
      * initialize phones
      */
     public ReadAndWrite() {
-
+        
         try {
             logger.info("Try to read exists xml file ");
             read();
@@ -56,18 +57,57 @@ public class ReadAndWrite {
         if (!f.exists()) {
             logger.info("The file :" + FILENAME + "is not exists");
             logger.warn("Please create" + FILENAME);
-            f.createNewFile();
+            try {
+                DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+                TransformerFactory tFactory = TransformerFactory.newInstance();
+                Transformer transformer = tFactory.newTransformer();
+                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+                transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+                document = docBuilder.newDocument();
+                root = document.createElement("addressbook");
+                document.appendChild(root);
+
+                DOMSource source = new DOMSource(document);
+
+                StreamResult result = new StreamResult(new java.io.File(FILENAME));
+
+                transformer.transform(source, result);
+            } catch (TransformerConfigurationException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (DOMException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (ParserConfigurationException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (TransformerFactoryConfigurationError e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (TransformerException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+                
 
             return;
         }
 
         else {
-            try {
 
-            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-            document = docBuilder.parse(FILENAME);
-            root = document.getDocumentElement();
+            try {
+                DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+                document = docBuilder.parse(FILENAME);
+                root = document.getDocumentElement();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 
             NodeList recordNodeList = root.getElementsByTagName("record");
             for (int i = 0; i < recordNodeList.getLength(); i++) {
@@ -86,13 +126,8 @@ public class ReadAndWrite {
                 recordlist.add(recordstring);
             }
 
-        } catch (ParserConfigurationException e) {
-            logger.error("ParserConfigurationException ", e);
-        } catch (IOException e) {
-            logger.error("IOException ", e);
-        } catch (SAXException e) {
-            logger.error("SAXException ", e);
-        }
+        } 
+      
 
         for (int i = 0; i < recordlist.size(); i++) {
             if (recordlist.get(i).trim().length() > 0) {
@@ -103,7 +138,7 @@ public class ReadAndWrite {
         }
         }
 
-    }
+
 
     /**
      * this method used to store info to xml file
@@ -130,11 +165,13 @@ public class ReadAndWrite {
                 addaddress.setTextContent(phone.getAddress());
                 addrecord.appendChild(addaddress);
             }
-            }
+        }
 
         try {
             TransformerFactory tFactory = TransformerFactory.newInstance();
             Transformer transformer = tFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new java.io.File(FILENAME));
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");

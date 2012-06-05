@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AddrBookImp {
-    final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
+    private static final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
     public AddrBookImp() {
         System.out.println("****************ADDRESS BOOK APPLICATION STARTING****************");
         System.out.println("****************USAGE OF THE COMMANDS            ****************");

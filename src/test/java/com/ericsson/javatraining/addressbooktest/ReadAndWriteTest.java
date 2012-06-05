@@ -6,15 +6,12 @@ import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import com.ericsson.javatraining.addressbook.AddrBookImp;
 import com.ericsson.javatraining.addressbook.PhoneModule;
 import com.ericsson.javatraining.addressbook.ReadAndWrite;
 
 public class ReadAndWriteTest {
-    final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
+
     ReadAndWrite readandwrite;
     @Before
     public void setUp() throws Exception {

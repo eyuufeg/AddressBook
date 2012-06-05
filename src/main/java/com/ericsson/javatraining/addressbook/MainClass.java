@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
  * 
  */
 public class MainClass {
+    private static final Logger logger = LoggerFactory.getLogger(MainClass.class);
 
     public static void main(String[] args) {
-        final Logger logger = LoggerFactory.getLogger(MainClass.class);
         logger.info(" AddressBook application starting");
         ExecutorService service = Executors.newSingleThreadExecutor();
         service.execute(new Runnable() {

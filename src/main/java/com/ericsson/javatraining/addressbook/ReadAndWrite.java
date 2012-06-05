@@ -26,7 +26,7 @@ import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
 public class ReadAndWrite {
-    final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
+    private static final Logger logger = LoggerFactory.getLogger(ReadAndWrite.class);
     private int size = 0;
     private int tempsize = 0;
     private PhoneModule[] phones = new PhoneModule[100];

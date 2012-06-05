@@ -5,10 +5,6 @@ public class CommandProcess {
     /**
      * getCommand should keep working
      */
-    public CommandProcess() {
-
-    }
-
     private ReadAndWrite addressbook = new ReadAndWrite();
     private AddrBookImp addrbookimpl = new AddrBookImp();
 

@@ -31,7 +31,6 @@ public class fromXML {
     public void read() throws IOException {
         File f = new File(FILENAME);
         if (!f.exists()) {
-
             logger.info("The file :" + FILENAME + "is not exists");
             logger.warn("Please create" + FILENAME);
             toxml.createBasicDocument();

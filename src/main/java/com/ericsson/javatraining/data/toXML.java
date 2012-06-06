@@ -27,8 +27,6 @@ public class toXML {
     private Document document;
     private Element root;
     private Data data = Data.getInstance();
-
-
     public void createBasicDocument() {
 
         try {
@@ -44,7 +42,6 @@ public class toXML {
 
             e.printStackTrace();
         }
-
         
 }
 
@@ -78,6 +75,7 @@ public class toXML {
                     Element addaddress = document.createElement("address");
                     addaddress.setTextContent(phone.getAddress());
                     addrecord.appendChild(addaddress);
+
                 }
                     }
         } catch (DOMException e) {
@@ -90,7 +88,6 @@ public class toXML {
             // TODO Auto-generated catch block
             e.printStackTrace();
                 }
-
 
         return document;
     }

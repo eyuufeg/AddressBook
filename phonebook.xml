@@ -30,4 +30,9 @@
     <number>123</number>
     <address>shanghai</address>
   </record>
+<record>
+    <name>Yu</name>
+    <number>d</number>
+    <address>d</address>
+  </record>
 </addressbook>

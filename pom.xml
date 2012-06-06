@@ -82,8 +82,8 @@
             </ignores>
             <excludes>
               <!-- ignore main -->
-              <exclude>com/ericsson/javatraining/addressbook/MainClass.class</exclude>   
-              <exclude>com/ericsson/javatraining/addressbook/MainClass.class</exclude>         
+              <exclude>com/ericsson/javatraining/implement/Input.class</exclude>   
+              <exclude>com/ericsson/javatraining/implement/MainClass.class</exclude>         
             </excludes>
           </instrumentation>
           <check />
@@ -91,12 +91,7 @@
                   <format>html</format>
                 </formats>
               </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-              <version>2.6</version>
-            </plugin>
+            </plugin>            
           </reportPlugins>
         </configuration>
       </plugin>

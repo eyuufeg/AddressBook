@@ -21,6 +21,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+/**
+ * toXML implements write info to xml.
+ * 
+ * 
+ */
 public class toXML {
     private static final Logger logger = LoggerFactory.getLogger(toXML.class);
     private String FILENAME = "phonebook.xml";
@@ -36,17 +41,15 @@ public class toXML {
             root = document.createElement("addressbook");
             document.appendChild(root);
         } catch (DOMException e) {
-
-            e.printStackTrace();
+            logger.error("DOMException ", e);
         } catch (ParserConfigurationException e) {
-
-            e.printStackTrace();
+            logger.error("ParserConfigurationException ", e);
         }
         
 }
 
     /**
-     * this method used to store info to xml file
+     * This method used to create document for user info
      * 
      * @throws IOException
      */
@@ -79,19 +82,24 @@ public class toXML {
                 }
                     }
         } catch (DOMException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("DOMException ", e);
         } catch (ParserConfigurationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("ParserConfigurationException ", e);
         } catch (SAXException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("SAXException ", e);
                 }
 
         return document;
     }
 
+    /**
+     * Write info to xml
+     * 
+     * @param document
+     *            created by function called createDocumentTree
+     * 
+     * 
+     */
     public void toxml(Document document) {
         try {
             TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -100,8 +108,6 @@ public class toXML {
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new java.io.File(FILENAME));
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             transformer.transform(source, result);
         } catch (TransformerConfigurationException e) {
             logger.error("TransformerConfigurationException ", e);

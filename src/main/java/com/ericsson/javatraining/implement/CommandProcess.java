@@ -17,6 +17,11 @@ public class CommandProcess {
     private fromXML fromxml = new fromXML();
     private Document document;
 
+    /**
+     * This method process command received from screen with no param
+     * 
+     * 
+     */
     public void process() {
 
         try {

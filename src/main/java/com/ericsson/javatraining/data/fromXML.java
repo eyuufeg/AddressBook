@@ -15,6 +15,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 
+/**
+ * fromXML implements read info from xml.
+ * 
+ */
 public class fromXML {
     private static final Logger logger = LoggerFactory.getLogger(fromXML.class);
     private List<String> recordlist = new ArrayList<String>();

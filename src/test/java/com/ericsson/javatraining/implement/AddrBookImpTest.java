@@ -37,9 +37,9 @@ public class AddrBookImpTest {
         phonemodule.setNumber(expectedNumber);
         phonemodule.setAddress(expectedAddress);
         addrbookimp.add(expectedName);
-        assertEquals("global data should contain name info of zhangsan", phonemodule.getName(), data.getPhone(expectedName).getName());
-        assertEquals("global data should contain number info of zhangsan", phonemodule.getNumber(), data.getPhone(expectedName).getNumber());
-        assertEquals("global data should contain address info of zhangsan", phonemodule.getAddress(), data.getPhone(expectedName).getAddress());
+        assertEquals("global data should contain name info", phonemodule.getName(), data.getPhone(expectedName).getName());
+        assertEquals("global data should contain number info", phonemodule.getNumber(), data.getPhone(expectedName).getNumber());
+        assertEquals("global data should contain address info", phonemodule.getAddress(), data.getPhone(expectedName).getAddress());
 
     }
 

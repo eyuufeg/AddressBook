@@ -32,7 +32,8 @@ public class toXML {
     private Document document;
     private Element root;
     private Data data = Data.getInstance();
-    public void createBasicDocument() {
+
+    public Document createBasicDocument() {
 
         try {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -45,7 +46,7 @@ public class toXML {
         } catch (ParserConfigurationException e) {
             logger.error("ParserConfigurationException ", e);
         }
-        
+        return document;
 }
 
     /**

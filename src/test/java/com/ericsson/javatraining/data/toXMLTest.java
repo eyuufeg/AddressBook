@@ -19,7 +19,6 @@ public class toXMLTest {
     public void setUp() throws Exception {
         data = Data.getInstance();
         phone = new PhoneModule();
-
     }
 
     @Test

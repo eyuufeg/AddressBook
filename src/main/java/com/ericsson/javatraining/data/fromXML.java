@@ -37,7 +37,7 @@ public class fromXML {
         if (!f.exists()) {
             logger.info("The file :" + FILENAME + "is not exists");
             logger.warn("Please create" + FILENAME);
-            toxml.createBasicDocument();
+            toxml.toxml(toxml.createBasicDocument());
             return;
         }
 

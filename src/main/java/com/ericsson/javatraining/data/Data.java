@@ -1,6 +1,8 @@
 package com.ericsson.javatraining.data;
 
-
+/**
+ * Data used to storage global phones data. It only can be initialized once
+ */
 public class Data {
     private int size = 0;
     private int tempsize = 0;
@@ -8,6 +10,11 @@ public class Data {
     private PhoneModule[] tempphones = new PhoneModule[100];
     private static Data instance = null;
 
+    /**
+     * 
+     * @return instance
+     * 
+     */
     public static Data getInstance() {
         if (instance == null) {
             instance = new Data();
@@ -19,7 +26,7 @@ public class Data {
     }
 
     /**
-     * tempphones used to save the new add info
+     * tempphones used to save the new added info
      */
     public void addtempPhone(PhoneModule phone) {
         tempphones[tempsize++] = phone;

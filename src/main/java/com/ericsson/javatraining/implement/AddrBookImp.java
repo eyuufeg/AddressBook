@@ -5,8 +5,8 @@ import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ericsson.javatraining.xml.Data;
-import com.ericsson.javatraining.xml.PhoneModule;
+import com.ericsson.javatraining.data.Data;
+import com.ericsson.javatraining.data.PhoneModule;
 
 public class AddrBookImp {
     private static final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);

@@ -20,4 +20,14 @@
     <number>y</number>
     <address>y</address>
   </record>
+<record>
+    <name>Yu</name>
+    <number>d</number>
+    <address>d</address>
+  </record>
+<record>
+    <name>Yufeng</name>
+    <number>123</number>
+    <address>shanghai</address>
+  </record>
 </addressbook>

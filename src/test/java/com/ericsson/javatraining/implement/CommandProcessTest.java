@@ -14,7 +14,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({ CommandProcessTest.class, Input.class })
+@PrepareForTest({ CommandProcessTest.class, File.class, Input.class })
 public class CommandProcessTest {
     private CommandProcess commandprocess;
     private File mockFile = mock(File.class);

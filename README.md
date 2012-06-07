@@ -1,8 +1,9 @@
 AddressBook application provides basic function such as add ,find ,list and quit to operator an addressbook.
 First of all,make sure maven has been installed ,create package by executing commands:
 #cd AddressBook
-#mvn package  to produce a jar file.
-Second,ilaunchapplication by executing commands:
+#mvn package
+to produce a jar file.
+Second,launch application by executing commands:
 #cd target
 #java -jar xxx.jar
 

@@ -25,12 +25,18 @@ import org.xml.sax.SAXException;
  * toXML implements write info to xml.
  * 
  */
-public class toXML {
-    private static final Logger logger = LoggerFactory.getLogger(toXML.class);
-    private String FILENAME = "phonebook.xml";
+public class ToXML {
+    private static final Logger logger = LoggerFactory.getLogger(ToXML.class);
+    private String FILENAME;
     private Document document;
     private Element root;
-    private Data data = Data.getInstance();
+    private Data data;
+
+    public ToXML() {
+        super();
+        FILENAME = "phonebook.xml";
+        data = Data.getInstance();
+    }
 
     public Document createBasicDocument() {
 

@@ -9,13 +9,13 @@ import org.w3c.dom.Element;
 
 public class toXMLTest {
 
-    private toXML toxml;
+    private ToXML toxml;
     private Document document;
     private Element root;
 
     @Before
     public void setUp() throws Exception {
-        toxml = new toXML();
+        toxml = new ToXML();
     }
 
     @Test

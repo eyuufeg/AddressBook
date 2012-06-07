@@ -80,11 +80,6 @@
             <ignores>
               <ignore>org.slf4j.Logger</ignore>
             </ignores>
-            <excludes>
-              <!-- ignore main -->
-              <exclude>com/ericsson/javatraining/implement/Input.class</exclude>   
-              <exclude>com/ericsson/javatraining/implement/MainClass.class</exclude>                      
-            </excludes>
           </instrumentation>
           <check />
                 <formats>                

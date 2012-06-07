@@ -19,14 +19,22 @@ import org.w3c.dom.Text;
  * fromXML implements read info from xml.
  * 
  */
-public class fromXML {
-    private static final Logger logger = LoggerFactory.getLogger(fromXML.class);
-    private List<String> recordlist = new ArrayList<String>();
-    private String FILENAME = "phonebook.xml";
+public class FromXML {
+    private static final Logger logger = LoggerFactory.getLogger(FromXML.class);
+    private List<String> recordlist;
+    private String FILENAME;
     private Document document;
     private Element root;
-    private Data data = Data.getInstance();
-    private toXML toxml = new toXML();
+    private Data data;
+    private ToXML toxml;
+
+    public FromXML() {
+        super();
+        recordlist = new ArrayList<String>();
+        FILENAME = "phonebook.xml";
+        data = Data.getInstance();
+        toxml = new ToXML();
+    }
     /**
      * read info from xml to phones
      * 

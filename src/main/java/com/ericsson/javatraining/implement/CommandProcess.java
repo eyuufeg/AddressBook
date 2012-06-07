@@ -5,15 +5,16 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ericsson.javatraining.data.fromXML;
+import com.ericsson.javatraining.data.FromXML;
 
 public class CommandProcess {
 
     private static final Logger logger = LoggerFactory.getLogger(CommandProcess.class);
     private AddrBookImp addrbookimpl = new AddrBookImp();
-    private fromXML fromxml = new fromXML();
+    private FromXML fromxml = new FromXML();
 
     public CommandProcess() {
+        super();
         System.out.println("****************ADDRESS BOOK APPLICATION STARTING****************");
         System.out.println("****************USAGE OF THE COMMANDS            ****************");
         System.out.println("                add <name>                                       ");

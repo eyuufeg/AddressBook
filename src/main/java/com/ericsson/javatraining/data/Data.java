@@ -4,12 +4,18 @@ package com.ericsson.javatraining.data;
  * Data used to storage global phones data. It only can be initialized once
  */
 public class Data {
-    private int size = 0;
-    private int tempsize = 0;
-    private PhoneModule[] phones = new PhoneModule[100];
-    private PhoneModule[] tempphones = new PhoneModule[100];
+    private int size;
+    private int tempsize;
+    private PhoneModule[] phones;
+    private PhoneModule[] tempphones;
     private static Data instance = null;
 
+    public Data() {
+        size = 0;
+        tempsize = 0;
+        phones = new PhoneModule[100];
+        tempphones = new PhoneModule[100];
+    }
     /**
      * 
      * @return instance

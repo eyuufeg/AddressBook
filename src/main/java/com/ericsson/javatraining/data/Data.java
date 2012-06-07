@@ -44,18 +44,6 @@ public class Data {
         return null;
     }
 
-    public PhoneModule gettempPhone(String name) {
-        for (PhoneModule phone : tempphones) {
-            if (phone == null) {
-                continue;
-            }
-            if (phone.getName().equalsIgnoreCase(name)) {
-                return phone;
-            }
-        }
-        return null;
-    }
-
     public PhoneModule[] getPhones() {
         return phones;
     }

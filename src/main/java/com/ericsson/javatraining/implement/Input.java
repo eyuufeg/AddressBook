@@ -14,5 +14,4 @@ public class Input {
         return sc.nextLine();
     }
 
-
 }

@@ -8,13 +8,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class toXMLTest {
+
     private toXML toxml;
     private Document document;
     private Element root;
+
     @Before
     public void setUp() throws Exception {
         toxml = new toXML();
-
     }
 
     @Test
@@ -22,6 +23,8 @@ public class toXMLTest {
         document = toxml.createBasicDocument();
         root = document.getDocumentElement();
         String name = root.getTagName();
+        toxml.toxml(document);
         assertEquals("return value should be addressbook", "addressbook", name);
     }
+ 
 }

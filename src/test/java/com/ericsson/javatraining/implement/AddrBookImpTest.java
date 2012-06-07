@@ -15,7 +15,7 @@ import com.ericsson.javatraining.data.PhoneModule;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ AddrBookImpTest.class, Input.class })
 public class AddrBookImpTest {
-    private String expectedName = "zhangsan";
+    private String expectedName = "ema";
     private String expectedNumber = "123";
     private String expectedAddress = "shanghai";
     private AddrBookImp addrbookimp;
@@ -37,16 +37,16 @@ public class AddrBookImpTest {
         phonemodule.setNumber(expectedNumber);
         phonemodule.setAddress(expectedAddress);
         addrbookimp.add(expectedName);
+        addrbookimp.quit();
         assertEquals("global data should contain name info", phonemodule.getName(), data.getPhone(expectedName).getName());
         assertEquals("global data should contain number info", phonemodule.getNumber(), data.getPhone(expectedName).getNumber());
         assertEquals("global data should contain address info", phonemodule.getAddress(), data.getPhone(expectedName).getAddress());
 
     }
-
-
     @Test
     public void testconvert() {
-        assertEquals("return value should be lower case", "zhangsan", addrbookimp.convert(expectedName));
+        assertEquals("return value should be lower case", "ema", addrbookimp.convert(expectedName));
         assertEquals("return value should be null when input is null", "", addrbookimp.convert(""));
     }
+
 }

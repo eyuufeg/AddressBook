@@ -1,10 +1,14 @@
 package com.ericsson.javatraining.implement;
 
+import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
+import com.ericsson.javatraining.data.toXML;
 
 /**
  * AddrBookImp implements basic function include add ,find ,list and quit.
@@ -13,16 +17,8 @@ import com.ericsson.javatraining.data.PhoneModule;
 public class AddrBookImp {
     private static final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
     private Data data = Data.getInstance();
-
-    public AddrBookImp() {
-        System.out.println("****************ADDRESS BOOK APPLICATION STARTING****************");
-        System.out.println("****************USAGE OF THE COMMANDS            ****************");
-        System.out.println("                add <name>                                       ");
-        System.out.println("                find <number>                                    ");
-        System.out.println("                list                                             ");
-        System.out.println("                quit                                             ");
-        System.out.println("*****************************************************************");
-    }
+    private toXML toxml = new toXML();
+    private Document document;
 
     /**
      * Add a new user by user name.
@@ -49,6 +45,7 @@ public class AddrBookImp {
      * 
      */
     public void find(String number) {
+
         for (PhoneModule phone : data.getPhones()) {
             if (phone != null) {
                 if (phone.getNumber().indexOf(number) < 0) {
@@ -83,7 +80,12 @@ public class AddrBookImp {
      */
     public void quit() {
         logger.info("Quit the application");
-        return;
+        try {
+            document = toxml.createDocumentTree();
+            toxml.toxml(document);
+        } catch (IOException e) {
+            logger.error("failed to store data ", e);
+        }
     }
 
     /**

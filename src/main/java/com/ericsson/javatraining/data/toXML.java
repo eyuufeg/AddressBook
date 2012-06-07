@@ -24,7 +24,6 @@ import org.xml.sax.SAXException;
 /**
  * toXML implements write info to xml.
  * 
- * 
  */
 public class toXML {
     private static final Logger logger = LoggerFactory.getLogger(toXML.class);

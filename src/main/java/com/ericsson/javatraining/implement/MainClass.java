@@ -11,13 +11,23 @@ public class MainClass {
 
     public static void main(String[] args) {
         logger.info(" AddressBook application starting");
+        final AddrBookImp addrbookimpl = new AddrBookImp();
         ExecutorService service = Executors.newSingleThreadExecutor();
         service.execute(new Runnable() {
             public void run() {
                 final CommandProcess cmdprocessing = new CommandProcess();
-                    cmdprocessing.process();
+                while (true) {
+                    String cmd = Input.getString("Please input your command: ");
+                    if (cmd.equals("quit")) {
+                        addrbookimpl.quit();
+                        break;
+                    }
+ else
+                        cmdprocessing.process(cmd);
+                }
             }
         });
         service.shutdownNow();
     }
+
 }

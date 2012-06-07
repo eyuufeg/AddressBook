@@ -48,8 +48,7 @@ public class fromXML {
                 document = docBuilder.parse(FILENAME);
                 root = document.getDocumentElement();
             } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                logger.error("Exception", e);
             }
 
             NodeList recordNodeList = root.getElementsByTagName("record");

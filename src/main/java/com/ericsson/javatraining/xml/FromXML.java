@@ -88,7 +88,6 @@ public class FromXML {
             if (recordlist.get(i).trim().length() > 0) {
                 PhoneModule phone = new PhoneModule(recordlist.get(i).trim());
                 data.addPhone(phone);
-
             }
         }
 

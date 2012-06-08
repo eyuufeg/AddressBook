@@ -15,7 +15,6 @@ import com.ericsson.javatraining.data.Data;
 @PrepareForTest({ CommandProcessTest.class, AddrBookImp.class, Input.class })
 public class CommandProcessTest {
     private CommandProcess commandprocess;
-    private AddrBookImp addrbookimpmock;
     private Data data;
     @Before
     public void setUp() throws Exception {

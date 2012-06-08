@@ -8,11 +8,12 @@ import org.w3c.dom.Document;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
-import com.ericsson.javatraining.data.ToXML;
+import com.ericsson.javatraining.xml.ToXML;
 
 /**
  * AddrBookImp implements basic function include add ,find ,list and quit.
  * 
+ * @author eyuufeg
  */
 public class AddrBookImp {
     private static final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
@@ -20,6 +21,9 @@ public class AddrBookImp {
     private ToXML toxml;
     private Document document;
 
+    /**
+     * default constructor
+     */
     public AddrBookImp() {
         super();
         data = Data.getInstance();

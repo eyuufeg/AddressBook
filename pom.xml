@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.ericsson.javatraining</groupId>
@@ -13,8 +12,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
-<build>
+
+  <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -25,7 +24,7 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-    <plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>1.4</version>
@@ -37,8 +36,7 @@
             </goals>
             <configuration>
               <transformers>
-                <transformer
-                  implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.ericsson.javatraining.addressbook.MainClass</mainClass>
                 </transformer>
               </transformers>
@@ -46,8 +44,8 @@
           </execution>
         </executions>
       </plugin>
- 
- <plugin>
+
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.0-beta-2</version>
@@ -76,42 +74,42 @@
               <artifactId>cobertura-maven-plugin</artifactId>
               <version>2.4</version>
               <configuration>
-              <instrumentation>
-            <ignores>
-              <ignore>org.slf4j.Logger</ignore>
-            </ignores>
-          </instrumentation>
-          <check />
-                <formats>                
+                <instrumentation>
+                  <ignores>
+                    <ignore>org.slf4j.Logger</ignore>
+                  </ignores>
+                </instrumentation>
+                <check />
+                <formats>
                   <format>html</format>
                 </formats>
               </configuration>
-            </plugin>            
+            </plugin>
           </reportPlugins>
         </configuration>
       </plugin>
     </plugins>
   </build>
   <dependencies>
-<dependency>
+    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.6.4</version>
       <scope>compile</scope>
     </dependency>
-      <dependency>
+    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-nop</artifactId>
       <version>1.6.4</version>
       <scope>test</scope>
     </dependency>
-<dependency>
+    <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.0.3</version>
       <scope>runtime</scope>
     </dependency>
-<dependency>
+    <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
       <version>1.0.3</version>
@@ -123,11 +121,11 @@
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
-   <dependency>
+    <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-module-junit4</artifactId>
-       <version>1.4.10</version>
-        <scope>test</scope>
+      <version>1.4.10</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
@@ -141,24 +139,23 @@
       <version>1.4.10</version>
       <scope>test</scope>
     </dependency>
-    
   </dependencies>
-  
+
   <organization>
-        <name>Ericsson</name>
-        <url>www.ericsson.com</url>
-    </organization>
-  
-    <developers>
-      <developer>
-        <id>eyuufeg</id>
-        <name>fish</name>
-        <email>fish.yu@ericsson.com</email>
-        <roles>
-          <role>Assistant Software Engineer</role>
-        </roles>
-        <timezone>+8</timezone>
-      </developer>
-    </developers>
+    <name>Ericsson</name>
+    <url>www.ericsson.com</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>eyuufeg</id>
+      <name>fish</name>
+      <email>fish.yu@ericsson.com</email>
+      <roles>
+        <role>Assistant Software Engineer</role>
+      </roles>
+      <timezone>+8</timezone>
+    </developer>
+  </developers>
 </project>
 

@@ -48,5 +48,4 @@ public class AddrBookImpTest {
         assertEquals("return value should be lower case", "ema", addrbookimp.convert(expectedName));
         assertEquals("return value should be null when input is null", "", addrbookimp.convert(""));
     }
-
 }

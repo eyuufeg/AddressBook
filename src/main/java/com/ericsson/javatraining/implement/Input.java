@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * Input include a static function to receive commands.
  * 
+ * @author eyuufeg
  */
 public class Input {
 

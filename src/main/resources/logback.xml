@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <property name="log.base" value="./logs/AddressBook" />
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">   
-    
-        <encoder>
-            <pattern>%d %level %class - %msg%n</pattern>           
-        </encoder>
-        <File>${log.base}.log</File>
-    </appender>
-    
-    <root level="info">       
-        <appender-ref ref="FILE" />
-    </root>
-
+  <property name="log.base" value="./logs/AddressBook" />
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <encoder>
+      <pattern>%d %level %class - %msg%n</pattern>
+    </encoder>
+    <File>${log.base}.log</File>
+  </appender>
+  <root level="info">
+    <appender-ref ref="FILE" />
+  </root>
 </configuration>  

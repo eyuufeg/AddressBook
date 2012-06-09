@@ -19,7 +19,7 @@ import com.ericsson.javatraining.implement.Input;
 public class MainClass {
     private static final Logger logger = LoggerFactory.getLogger(MainClass.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         logger.info(" AddressBook application starting");
         final AddrBookImp addrbookimpl = new AddrBookImp();
         ExecutorService service = Executors.newSingleThreadExecutor();
@@ -30,7 +30,6 @@ public class MainClass {
                     String cmd = Input.getString("Please input your command: ");
                     if (cmd.equals("quit")) {
                         addrbookimpl.quit();
-                        logger.info("Store all the information");
                         break;
                     } else
                         cmdprocessing.process(cmd);

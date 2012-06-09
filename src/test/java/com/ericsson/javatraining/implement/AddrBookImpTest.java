@@ -87,6 +87,12 @@ public class AddrBookImpTest {
     }
 
     @Test
+    public void testquickfind() {
+        addrbookimp.quickfind(expectedNumber);
+        verify(mocLogger).info("Find the user with number: " + expectedNumber);
+    }
+
+    @Test
     public void testlist() {
         addrbookimp.list();
         verify(mocLogger).info("List all the information");

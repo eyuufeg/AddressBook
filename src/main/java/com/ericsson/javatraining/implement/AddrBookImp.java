@@ -2,7 +2,6 @@ package com.ericsson.javatraining.implement;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
@@ -18,7 +17,6 @@ public class AddrBookImp {
     private static final Logger logger = LoggerFactory.getLogger(AddrBookImp.class);
     private Data data;
     private ToXML toxml;
-    private Document document;
 
     /**
      * default constructor
@@ -58,13 +56,21 @@ public class AddrBookImp {
         for (PhoneModule phone : data.getPhones()) {
             if (phone != null) {
                 if (phone.getNumber().indexOf(number) >= 0) {
-                    logger.info("Find the user include number: " + number);
                     System.out.println(phone);
+                    logger.info("Find the user include number: " + number);
 
                 }
             }
         }
 
+    }
+
+    public void quickfind(String number) {
+
+        if ((data.getPhone(number)) != null) {
+            System.out.println(data.getPhone(number));
+            logger.info("Find the user with number: " + number);
+        }
     }
 
     /**
@@ -89,8 +95,7 @@ public class AddrBookImp {
     public void quit() {
 
         try {
-            document = toxml.createDocumentTree();
-            toxml.toxml(document);
+            toxml.toxml(toxml.createDocumentTree());
             logger.info("Quit the application");
         } catch (AddressBookException e) {
             logger.error("Failed to store data ", e);
@@ -106,7 +111,6 @@ public class AddrBookImp {
      */
 
     public String convert(String name) {
-
         return name.substring(0).toLowerCase();
     }
 }

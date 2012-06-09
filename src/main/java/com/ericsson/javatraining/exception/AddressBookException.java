@@ -21,15 +21,6 @@ public class AddressBookException extends Exception {
     }
 
     /**
-     * 
-     * @param message
-     *            the detail message.
-     */
-    public AddressBookException(String message) {
-        super(message);
-    }
-
-    /**
      * Constructor with the specified detail message and cause.
      * 
      * @param message
@@ -41,14 +32,6 @@ public class AddressBookException extends Exception {
         super(message, cause);
     }
 
-    /**
-     * Constructor with the specified cause
-     * 
-     * @param cause
-     *            the cause
-     */
-    public AddressBookException(Throwable cause) {
-        super(cause);
-    }
+
 
 }

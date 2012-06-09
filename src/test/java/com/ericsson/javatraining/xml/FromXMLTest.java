@@ -6,6 +6,7 @@ import java.io.File;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -91,6 +92,43 @@ public class FromXMLTest {
         }
     }
 
+    @Test(expected = AddressBookException.class)
+    public void testReadWrongFile() throws AddressBookException {
 
+        try {
+
+            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            Document document = docBuilder.parse(FILENAME);
+            Element root = document.getDocumentElement();
+
+            Node addrecord = document.createElement("record");
+            root.appendChild(addrecord);
+
+            Element addname = document.createElement("name");
+            addname.setTextContent(expectedName);
+            addrecord.appendChild(addname);
+
+            Element addaddress = document.createElement("address");
+            addaddress.setTextContent(expectedAddress);
+            addrecord.appendChild(addaddress);
+
+            TransformerFactory tFactory = TransformerFactory.newInstance();
+            Transformer transformer = tFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new java.io.File(FILENAME));
+            transformer.transform(source, result);
+
+            fromxml.read();
+
+        } catch (AddressBookException e) {
+            throw e;
+        } catch (Exception e1) {
+            System.out.print(e1.getMessage());
+        }
+    }
 
 }

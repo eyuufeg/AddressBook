@@ -115,6 +115,7 @@ public class ToXML {
             Transformer transformer = tFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new java.io.File(FILENAME));
             transformer.transform(source, result);
@@ -122,7 +123,6 @@ public class ToXML {
             logger.error("toxml failed", e);
             throw new AddressBookException("toxml failed", e);
         }
-
     }
 
 }

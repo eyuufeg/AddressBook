@@ -38,8 +38,7 @@ public class PhoneModule {
      * @return user's name
      */
     public String setName(String name) {
-        this.name = name;
-        return this.name;
+        return this.name = name;
     }
 
     /**
@@ -50,8 +49,7 @@ public class PhoneModule {
      * @return user's number
      */
     public String setNumber(String number) {
-        this.number = number;
-        return this.number;
+        return this.number = number;
     }
 
     /**
@@ -62,8 +60,7 @@ public class PhoneModule {
      * @return user's address
      */
     public String setAddress(String address) {
-        this.address = address;
-        return this.address;
+        return this.address = address;
     }
 
     /**
@@ -72,7 +69,6 @@ public class PhoneModule {
      * @return user's name
      */
     public String getName() {
-
         return name;
     }
 
@@ -82,7 +78,6 @@ public class PhoneModule {
      * @return user's number
      */
     public String getNumber() {
-
         return number;
     }
 
@@ -92,7 +87,6 @@ public class PhoneModule {
      * @return user's address
      */
     public String getAddress() {
-
         return address;
     }
 

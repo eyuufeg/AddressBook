@@ -25,6 +25,7 @@ import org.w3c.dom.Text;
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
 import com.ericsson.javatraining.exception.AddressBookException;
+
 public class ToXMLTest {
 
     private static String FILENAME = "phonebook.xml";
@@ -132,6 +133,20 @@ public class ToXMLTest {
         assertEquals("return value should be ema", phonemodule.getName(), data.getPhone(expectedNumber).getName());
         assertEquals("return value should be 123", phonemodule.getAddress(), data.getPhone(expectedNumber).getAddress());
         assertEquals("return value should be shanghai", phonemodule.getNumber(), data.getPhone(expectedNumber).getNumber());
+    }
+
+    @Test(expected = AddressBookException.class)
+    public void testfailcreateDocumentTree() throws AddressBookException {
+        File xmlFile = new File(FILENAME);
+        if (xmlFile.exists()) {
+            xmlFile.delete();
+        }
+        try {
+            document = toxml.createDocumentTree();
+        } catch (AddressBookException e) {
+            throw e;
+        }
+
     }
 
 }

@@ -12,7 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
-
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ CommandProcessTest.class, CommandProcess.class, AddrBookImp.class })
 public class CommandProcessTest {
@@ -22,7 +21,6 @@ public class CommandProcessTest {
 
     @Before
     public void setUp() throws Exception {
-
         addrbookimpmock = mock(AddrBookImp.class);
         whenNew(AddrBookImp.class).withNoArguments().thenReturn(addrbookimpmock);
         commandprocess = new CommandProcess();
@@ -40,6 +38,7 @@ public class CommandProcessTest {
     public void testCommandprocessadd() {
         commandprocess.process("add ema");
         verify(addrbookimpmock).add("ema");
+
     }
 
     @Test
@@ -49,9 +48,16 @@ public class CommandProcessTest {
     }
 
     @Test
+    public void testCommandprocessquickfind() {
+        commandprocess.process("quickfind 123");
+        verify(addrbookimpmock).quickfind("123");
+    }
+
+    @Test
     public void testCommandprocesslist() {
         commandprocess.process("list");
         verify(addrbookimpmock).list();
     }
+
 
 }

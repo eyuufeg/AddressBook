@@ -27,6 +27,7 @@ public class CommandProcess {
         System.out.println("****************USAGE OF THE COMMANDS            ****************");
         System.out.println("                add <name>                                       ");
         System.out.println("                find <number>                                    ");
+        System.out.println("                quickfind <number>                               ");
         System.out.println("                list                                             ");
         System.out.println("                quit                                             ");
         System.out.println("*****************************************************************");
@@ -51,11 +52,12 @@ public class CommandProcess {
             addrbookimpl.add(cmd.substring(cmd.indexOf(' ') + 1));
         else if (cmd.startsWith("find "))
             addrbookimpl.find(cmd.substring(cmd.indexOf(' ') + 1));
+        else if (cmd.startsWith("quickfind "))
+            addrbookimpl.quickfind(cmd.substring(cmd.indexOf(' ') + 1));
         else if (cmd.equals("list"))
             addrbookimpl.list();
         else
             System.out.println("unknown command!");
-
     }
 
 }

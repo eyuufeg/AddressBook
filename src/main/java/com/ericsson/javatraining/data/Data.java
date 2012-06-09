@@ -42,12 +42,10 @@ public class Data {
 
     public PhoneModule getPhone(String number) {
         for (PhoneModule phone : phones) {
-            if (phone == null) {
+            if (phone == null)
                 continue;
-            }
-            if (phone.getNumber().equalsIgnoreCase(number)) {
+            if (phone.getNumber().equalsIgnoreCase(number))
                 return phone;
-            }
         }
         return null;
     }

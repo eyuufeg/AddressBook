@@ -37,7 +37,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.ericsson.javatraining.addressbook.MainClass</mainClass>
+                  <mainClass>com.ericsson.javatraining.main.MainClass</mainClass>
                 </transformer>
               </transformers>
             </configuration>

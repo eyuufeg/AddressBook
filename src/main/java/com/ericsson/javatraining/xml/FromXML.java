@@ -1,4 +1,5 @@
 package com.ericsson.javatraining.xml;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,9 +18,10 @@ import org.w3c.dom.Text;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
+import com.ericsson.javatraining.exception.AddressBookException;
 
 /**
- * fromXML implements read info from xml.
+ * FromXML implements read info from XML.
  * 
  * @author eyuufeg
  */
@@ -33,7 +35,7 @@ public class FromXML {
     private Element root;
 
     /**
-     * default constructor
+     * Default constructor
      */
     public FromXML() {
         super();
@@ -41,12 +43,14 @@ public class FromXML {
         data = Data.getInstance();
         toxml = new ToXML();
     }
+
     /**
      * read info from xml to phones
      * 
      * @throws IOException
      */
-    public void read() throws IOException {
+    public void read() throws AddressBookException {
+
         File f = new File(FILENAME);
         if (!f.exists()) {
             logger.info("The file :" + FILENAME + "is not exists");
@@ -62,7 +66,9 @@ public class FromXML {
                 document = docBuilder.parse(FILENAME);
                 root = document.getDocumentElement();
             } catch (Exception e) {
-                logger.error("Exception", e);
+                logger.error("read from xml file error", e);
+                new AddressBookException("read from xml file error", e);
+
             }
 
             NodeList recordNodeList = root.getElementsByTagName("record");
@@ -82,7 +88,7 @@ public class FromXML {
                 recordlist.add(recordstring);
             }
 
-        } 
+        }
 
         for (int i = 0; i < recordlist.size(); i++) {
             if (recordlist.get(i).trim().length() > 0) {
@@ -91,6 +97,5 @@ public class FromXML {
             }
         }
 
-        }
+    }
 }
-

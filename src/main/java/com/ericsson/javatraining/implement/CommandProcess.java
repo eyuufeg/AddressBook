@@ -1,10 +1,9 @@
 package com.ericsson.javatraining.implement;
 
-import java.io.IOException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ericsson.javatraining.exception.AddressBookException;
 import com.ericsson.javatraining.xml.FromXML;
 
 /**
@@ -33,12 +32,12 @@ public class CommandProcess {
         System.out.println("*****************************************************************");
         try {
             fromxml.read();
-        } catch (IOException e) {
-            logger.error("failed to store data ", e);
+        } catch (AddressBookException e) {
+            logger.error("failed to read data from xml", e);
         }
 
     }
-    
+
     /**
      * This method process input string cmd
      * 
@@ -48,14 +47,15 @@ public class CommandProcess {
      */
     public void process(String cmd) {
 
-            if (cmd.startsWith("add "))
-                addrbookimpl.add(cmd.substring(cmd.indexOf(' ') + 1));
-            else if (cmd.startsWith("find "))
-                addrbookimpl.find(cmd.substring(cmd.indexOf(' ') + 1));
-            else if (cmd.equals("list"))
-                addrbookimpl.list();
+        if (cmd.startsWith("add "))
+            addrbookimpl.add(cmd.substring(cmd.indexOf(' ') + 1));
+        else if (cmd.startsWith("find "))
+            addrbookimpl.find(cmd.substring(cmd.indexOf(' ') + 1));
+        else if (cmd.equals("list"))
+            addrbookimpl.list();
         else
-                System.out.println("unknown command!");
-        }
+            System.out.println("unknown command!");
+
+    }
 
 }

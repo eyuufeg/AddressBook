@@ -1,13 +1,12 @@
 package com.ericsson.javatraining.implement;
 
-import java.io.IOException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
+import com.ericsson.javatraining.exception.AddressBookException;
 import com.ericsson.javatraining.xml.ToXML;
 
 /**
@@ -29,6 +28,7 @@ public class AddrBookImp {
         data = Data.getInstance();
         toxml = new ToXML();
     }
+
     /**
      * Add a new user by user name.
      * 
@@ -57,12 +57,11 @@ public class AddrBookImp {
 
         for (PhoneModule phone : data.getPhones()) {
             if (phone != null) {
-                if (phone.getNumber().indexOf(number) < 0) {
-                    continue;
-                } else {
-                    logger.info("Find the user with number: " + number);
+                if (phone.getNumber().indexOf(number) >= 0) {
+                    logger.info("Find the user include number: " + number);
                     System.out.println(phone);
-            }
+
+                }
             }
         }
 
@@ -88,12 +87,13 @@ public class AddrBookImp {
      * 
      */
     public void quit() {
-        logger.info("Quit the application");
+
         try {
             document = toxml.createDocumentTree();
             toxml.toxml(document);
-        } catch (IOException e) {
-            logger.error("failed to store data ", e);
+            logger.info("Quit the application");
+        } catch (AddressBookException e) {
+            logger.error("Failed to store data ", e);
         }
     }
 

@@ -30,9 +30,9 @@ public class MainClass {
                     String cmd = Input.getString("Please input your command: ");
                     if (cmd.equals("quit")) {
                         addrbookimpl.quit();
+                        logger.info("Store all the information");
                         break;
-                    }
- else
+                    } else
                         cmdprocessing.process(cmd);
                 }
             }

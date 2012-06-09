@@ -1,28 +1,24 @@
 package com.ericsson.javatraining.xml;
+
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
+import com.ericsson.javatraining.exception.AddressBookException;
 
 /**
  * toXML implements write info to xml.
@@ -37,14 +33,18 @@ public class ToXML {
     private Element root;
 
     /**
-     * default constructor
+     * Default constructor
      */
     public ToXML() {
         super();
         data = Data.getInstance();
     }
 
-    public Document createBasicDocument() {
+    /**
+     * Create a DOM tree with addressbook node when phonebook.xml is not existing
+     * 
+     */
+    public Document createBasicDocument() throws AddressBookException {
 
         try {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -52,21 +52,22 @@ public class ToXML {
             document = docBuilder.newDocument();
             root = document.createElement("addressbook");
             document.appendChild(root);
-        } catch (DOMException e) {
-            logger.error("DOMException ", e);
-        } catch (ParserConfigurationException e) {
-            logger.error("ParserConfigurationException ", e);
+        } catch (Exception e) {
+
+            logger.error("createBasicDocument failed", e);
+            throw new AddressBookException("createBasicDocument failed", e);
+
         }
+
         return document;
-}
+    }
 
     /**
      * This method used to create document for user info
      * 
      * @throws IOException
      */
-    public Document createDocumentTree() throws IOException {
-        logger.info("Store all the information");
+    public Document createDocumentTree() throws AddressBookException {
 
         try {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -90,16 +91,13 @@ public class ToXML {
                     Element addaddress = document.createElement("address");
                     addaddress.setTextContent(phone.getAddress());
                     addrecord.appendChild(addaddress);
+                }
+            }
+        } catch (Exception e) {
+            logger.error("createDocumentTree failed", e);
+            throw new AddressBookException("createDocumentTree failed", e);
+        }
 
-                }
-                    }
-        } catch (DOMException e) {
-            logger.error("DOMException ", e);
-        } catch (ParserConfigurationException e) {
-            logger.error("ParserConfigurationException ", e);
-        } catch (SAXException e) {
-            logger.error("SAXException ", e);
-                }
         return document;
     }
 
@@ -111,7 +109,7 @@ public class ToXML {
      * 
      * 
      */
-    public void toxml(Document document) {
+    public void toxml(Document document) throws AddressBookException {
         try {
             TransformerFactory tFactory = TransformerFactory.newInstance();
             Transformer transformer = tFactory.newTransformer();
@@ -120,15 +118,11 @@ public class ToXML {
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new java.io.File(FILENAME));
             transformer.transform(source, result);
-        } catch (TransformerConfigurationException e) {
-            logger.error("TransformerConfigurationException ", e);
-        } catch (TransformerFactoryConfigurationError e) {
-            logger.error("TransformerFactoryConfigurationError ", e);
-        } catch (TransformerException e) {
-            logger.error("TransformerException ", e);
+        } catch (Exception e) {
+            logger.error("toxml failed", e);
+            throw new AddressBookException("toxml failed", e);
         }
 
     }
 
 }
-

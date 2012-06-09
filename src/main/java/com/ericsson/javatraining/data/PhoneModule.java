@@ -33,27 +33,32 @@ public class PhoneModule {
     /**
      * set user's name
      * 
-     * @param user's name
+     * @param user
+     *            's name
      * @return user's name
      */
     public String setName(String name) {
         this.name = name;
         return this.name;
     }
+
     /**
      * set user's number
      * 
-     * @param user's number
+     * @param user
+     *            's number
      * @return user's number
      */
     public String setNumber(String number) {
         this.number = number;
         return this.number;
     }
+
     /**
      * set user's address
      * 
-     * @param user's address
+     * @param user
+     *            's address
      * @return user's address
      */
     public String setAddress(String address) {

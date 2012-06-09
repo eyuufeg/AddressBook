@@ -11,10 +11,12 @@ public class Data {
     private int tempsize;
     private PhoneModule[] phones;
     private PhoneModule[] tempphones;
+
     public Data() {
         phones = new PhoneModule[100];
         tempphones = new PhoneModule[100];
     }
+
     /**
      * 
      * @return instance
@@ -26,6 +28,7 @@ public class Data {
         }
         return instance;
     }
+
     public void addPhone(PhoneModule phone) {
         phones[size++] = phone;
     }
@@ -37,12 +40,12 @@ public class Data {
         tempphones[tempsize++] = phone;
     }
 
-    public PhoneModule getPhone(String name) {
+    public PhoneModule getPhone(String number) {
         for (PhoneModule phone : phones) {
             if (phone == null) {
                 continue;
             }
-            if (phone.getName().equalsIgnoreCase(name)) {
+            if (phone.getNumber().equalsIgnoreCase(number)) {
                 return phone;
             }
         }

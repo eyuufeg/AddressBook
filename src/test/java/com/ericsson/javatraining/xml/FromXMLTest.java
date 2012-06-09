@@ -3,7 +3,6 @@ package com.ericsson.javatraining.xml;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
-import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -21,14 +20,17 @@ import org.w3c.dom.Node;
 
 import com.ericsson.javatraining.data.Data;
 import com.ericsson.javatraining.data.PhoneModule;
+import com.ericsson.javatraining.exception.AddressBookException;
 
 public class FromXMLTest {
+    private static String FILENAME = "phonebook.xml";
     private FromXML fromxml = new FromXML();
-    private String expectedName = "ema";
-    private String expectedNumber = "123";
-    private String expectedAddress = "shanghai";
+    private static String expectedName = "ema";
+    private static String expectedNumber = "123";
+    private static String expectedAddress = "shanghai";
     private PhoneModule phonemodule;
     private Data data;
+
     @Before
     public void setUp() throws Exception {
         phonemodule = new PhoneModule();
@@ -36,7 +38,7 @@ public class FromXMLTest {
         phonemodule.setNumber(expectedNumber);
         phonemodule.setAddress(expectedAddress);
 
-        File xmlFile = new File("phonebook.xml");
+        File xmlFile = new File(FILENAME);
         if (xmlFile.exists()) {
             xmlFile.delete();
         }
@@ -70,7 +72,7 @@ public class FromXMLTest {
 
     @After
     public void tearDown() throws Exception {
-        File xmlFile = new File("phonebook.xml");
+        File xmlFile = new File(FILENAME);
         if (xmlFile.exists()) {
             xmlFile.delete();
         }
@@ -81,13 +83,14 @@ public class FromXMLTest {
         try {
             fromxml.read();
             data = Data.getInstance();
-            assertEquals(phonemodule.getName(), data.getPhone(expectedName).getName());
-            assertEquals(phonemodule.getNumber(), data.getPhone(expectedName).getNumber());
-            assertEquals(phonemodule.getAddress(), data.getPhone(expectedName).getAddress());
-        } catch (IOException e) {
-            e.printStackTrace();
+            assertEquals(phonemodule.getName(), data.getPhone(expectedNumber).getName());
+            assertEquals(phonemodule.getNumber(), data.getPhone(expectedNumber).getNumber());
+            assertEquals(phonemodule.getAddress(), data.getPhone(expectedNumber).getAddress());
+        } catch (AddressBookException e) {
+
         }
     }
+
 
 
 }

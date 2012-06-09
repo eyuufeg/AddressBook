@@ -9,17 +9,17 @@ add new user include his/her name number and address info to your addressbook
    search suited user by inputting partial or complete number
 3.quickly find user by his/her number
    search suited user by inputting number
-4.list all user’s info
+4.list all userï¿½s info
    display all existing users 
 5.quit application
-when quit application, it will save users’ info which you have added and quit
+when quit application, it will save usersï¿½ info which you have added and quit
 ===========================================================
 
 Do as following steps to package source code and run program:
 1.change directory to AddressBook
-2.input ‘mvn package’ then you can see target
+2.input ï¿½mvn packageï¿½ then you can see target
 3.change directory to target
-4.input ‘java –jar AddressBook-1.0-SNAPSHOT.jar’ to start program
+4.input ï¿½java ï¿½jar AddressBook-1.0-SNAPSHOT.jarï¿½ to start program
 When screen show as following
  
 ****************ADDRESS BOOK APPLICATION STARTING****************
@@ -33,8 +33,8 @@ When screen show as following
 Please input your command: 
 
 1.add a user. Please input 'add James' 
-  Enter number: ‘123’
-  Enter address: ‘shanghai’
+  Enter number: ï¿½123ï¿½
+  Enter address: ï¿½shanghaiï¿½
 2.find a user info by his/her partial number. Please input 'find XXX'  
 3.quickly find a user info by his/her full number. Please input 'quickfind XXX' 
 4.list all the users. Please input 'list'

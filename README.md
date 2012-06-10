@@ -23,27 +23,26 @@ Do as following steps to package source code and run program:
 4.input 'java -jar AddressBook-1.0-SNAPSHOT.jar' to start program
 When screen show as following
 
-****************ADDRESS BOOK APPLICATION STARTING****************
-****************USAGE OF THE COMMANDS            ****************
+****************ADDRESS BOOK APPLICATION STARTING**********************
+****************USAGE OF THE COMMANDS            **********************
                 add <name>                                       
                 find <number>                                    
                 quickfind <number>                               
                 list                                             
                 quit                                             
-*****************************************************************
-
+***********************************************************************
 Please input your command:
 
 1.add a user. Please input 'add James' 
   Enter number: '123'
   Enter address: 'shanghai'
 
-
-2.find a user info by his/her partial number. Please input 'find XXX'  
+2.find a user info by his/her partial number. Please input 'find XXX' 
+ 
 3.quickly find a user info by his/her full number. Please input 'quickfind XXX'
 
-
 4.list all the users. Please input 'list'
+
 5.quit the application. Please input 'quit'
 
 

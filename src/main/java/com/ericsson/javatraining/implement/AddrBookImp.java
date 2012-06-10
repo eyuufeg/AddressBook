@@ -57,20 +57,17 @@ public class AddrBookImp {
             if (phone != null) {
                 if (phone.getNumber().indexOf(number) >= 0) {
                     System.out.println(phone);
-                    logger.info("Find the user include number: " + number);
-
                 }
             }
         }
-
+        logger.info("Find the user include number: " + number);
     }
 
     public void quickfind(String number) {
-
-        if ((data.getPhone(number)) != null) {
+        if (data.getPhone(number) != null) {
             System.out.println(data.getPhone(number));
-            logger.info("Find the user with number: " + number);
         }
+        logger.info("Find the user with number: " + number);
     }
 
     /**

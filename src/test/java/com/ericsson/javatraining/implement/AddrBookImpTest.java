@@ -33,17 +33,20 @@ public class AddrBookImpTest {
     private String expectedAddress = "shanghai";
     private AddrBookImp addrbookimp;
     private PhoneModule phonemodule;
+    private PhoneModule phone;
     private Data data;
     private FromXML fromxml = new FromXML();
 
     @Before
     public void setUp() throws Exception {
+        phone = new PhoneModule("yufeng::456::shanghai");
         mockStatic(LoggerFactory.class);
         when(LoggerFactory.getLogger(AddrBookImp.class)).thenReturn(mocLogger);
         when(LoggerFactory.getLogger(ToXML.class)).thenReturn(mocLogger);
         when(mocLogger.isInfoEnabled()).thenReturn(true);
         when(mocLogger.isDebugEnabled()).thenReturn(true);
         data = Data.getInstance();
+        data.addPhone(phone);
         mockStatic(Input.class);
 
         when(Input.getString("Enter number: ")).thenReturn(expectedNumber);
@@ -82,14 +85,14 @@ public class AddrBookImpTest {
 
     @Test
     public void testfind() {
-        addrbookimp.find(expectedNumber);
-        verify(mocLogger).info("Find the user include number: " + expectedNumber);
+        addrbookimp.find("456");
+        verify(mocLogger).info("Find the user include number: " + "456");
     }
 
     @Test
     public void testquickfind() {
-        addrbookimp.quickfind(expectedNumber);
-        verify(mocLogger).info("Find the user with number: " + expectedNumber);
+        addrbookimp.quickfind("456");
+        verify(mocLogger).info("Find the user with number: " + "456");
     }
 
     @Test

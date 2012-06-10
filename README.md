@@ -31,17 +31,26 @@ When screen show as following
                 list                                             
                 quit                                             
 *****************************************************************
-Please input your command: 
+
+Please input your command:
 
 1.add a user. Please input 'add James' 
   Enter number: '123'
   Enter address: 'shanghai'
+
+
 2.find a user info by his/her partial number. Please input 'find XXX'  
-3.quickly find a user info by his/her full number. Please input 'quickfind XXX' 
+3.quickly find a user info by his/her full number. Please input 'quickfind XXX'
+
+
 4.list all the users. Please input 'list'
 5.quit the application. Please input 'quit'
 
+
 Note:
 1.when find a user's info, you can either input the number completed or partial
+
 2.when input quit to end the application, it will be store the info of user which you have add in phonebook.xml
+
 3.all the log file can be found at ./logs
+

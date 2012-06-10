@@ -1,6 +1,7 @@
 AddressBook application provides basic function such as add ,find ,list and quit. Make sure JDK and maven has been installed.
 
 Follow the steps below to package the sourcecode and run the program:
+
 1.add new user include his/her name number and address info to your addressbook
 
 2.search suited user by inputting partial or complete number

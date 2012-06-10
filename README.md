@@ -37,8 +37,8 @@ Please input your command:
 
 5.quit the application. Please input 'quit'
 
-
 Note:
+
 1.when find a user's info, you can either input the number completed or partial
 
 2.when input quit to end the application, it will be store the info of user which you have add in phonebook.xml

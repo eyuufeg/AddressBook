@@ -17,9 +17,13 @@ add new user include his/her name number and address info to your addressbook
 when quit application, it will save users info which you have added and quit
 
 Do as following steps to package source code and run program:
+
 1.change directory to AddressBook
+
 2.input 'mvn package' then you can see target
+
 3.change directory to target
+
 4.input 'java -jar AddressBook-1.0-SNAPSHOT.jar' to start program
 When screen show as following
 

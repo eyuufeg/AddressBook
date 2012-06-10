@@ -22,15 +22,7 @@ Do as following steps to package source code and run program:
 3.change directory to target
 4.input 'java -jar AddressBook-1.0-SNAPSHOT.jar' to start program
 When screen show as following
-************************************************************************
-****************ADDRESS BOOK APPLICATION STARTING**********************
-****************USAGE OF THE COMMANDS            **********************
-                add <name>                                       
-                find <number>                                    
-                quickfind <number>                               
-                list                                             
-                quit                                             
-************************************************************************
+
 Please input your command:
 
 1.add a user. Please input 'add James' 

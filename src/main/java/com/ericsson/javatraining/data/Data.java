@@ -13,6 +13,7 @@ public class Data {
     private PhoneModule[] tempphones;
 
     public Data() {
+        super();
         phones = new PhoneModule[100];
         tempphones = new PhoneModule[100];
     }

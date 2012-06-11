@@ -9,9 +9,11 @@ import java.util.Scanner;
  */
 public class Input {
 
+    private Input() {
+    }
+
     public static String getString(String tip) {
         System.out.print(tip);
         return (new Scanner(System.in)).nextLine();
     }
-
 }

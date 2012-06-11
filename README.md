@@ -24,6 +24,17 @@ Follow the steps below to package the sourcecode and run the program:
 4.input 'java -jar AddressBook-1.0-SNAPSHOT.jar' to start program
 
 When screen show as following
+*********************************************************
+****************ADDRESS BOOK APPLICATION STARTING****************
+****************USAGE OF THE COMMANDS            ****************
+                add <name>                                       
+                find <number>                                    
+                quickfind <number>                               
+                list                                             
+                quit                                             
+*****************************************************************
+Please input your command: 
+*****************************************************************
 
 Please input your command:
 

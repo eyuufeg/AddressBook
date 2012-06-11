@@ -23,14 +23,14 @@ public class CommandProcess {
      */
     public CommandProcess() {
         super();
-        System.out.println("****************ADDRESS BOOK APPLICATION STARTING****************");
-        System.out.println("****************USAGE OF THE COMMANDS            ****************");
+        System.out.println("================ADDRESS BOOK APPLICATION STARTING================");
+        System.out.println("================USAGE OF THE COMMANDS============================");
         System.out.println("                add <name>                                       ");
         System.out.println("                find <number>                                    ");
         System.out.println("                quickfind <number>                               ");
         System.out.println("                list                                             ");
         System.out.println("                quit                                             ");
-        System.out.println("*****************************************************************");
+        System.out.println("=================================================================");
         try {
             fromxml.read();
         } catch (AddressBookException e) {

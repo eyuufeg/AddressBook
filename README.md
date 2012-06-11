@@ -25,15 +25,23 @@ Follow the steps below to package the sourcecode and run the program:
 
 When screen show as following
 *********************************************************
-****************ADDRESS BOOK APPLICATION STARTING****************
-****************USAGE OF THE COMMANDS            ****************
-                add <name>                                       
-                find <number>                                    
-                quickfind <number>                               
-                list                                             
-                quit                                             
-*****************************************************************
+
+================USAGE OF THE COMMANDS============================  
+
+                add <name>   
+                                    
+                find <number>  
+                                  
+                quickfind <number>
+                               
+                list              
+                               
+                quit           
+                                  
+=================================================================
+
 Please input your command: 
+
 *****************************************************************
 
 Please input your command:

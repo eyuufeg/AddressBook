@@ -44,7 +44,6 @@ Please input your command:
 
 *****************************************************************
 
-Please input your command:
 
 1.add a user. please input 'add James' 
 

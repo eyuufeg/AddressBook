@@ -1,7 +1,7 @@
+#AddressBook#
 AddressBook application provides basic function such as add ,find ,list and quit. Make sure JDK and maven has been installed.
 
-Follow the steps below to package the sourcecode and run the program:
-
+#Introduction#
 1.add new user include his/her name number and address info to your addressbook
 
 2.search suited user by inputting partial or complete number
@@ -12,7 +12,8 @@ Follow the steps below to package the sourcecode and run the program:
 
 5.when quit application, it will save users info which you have added and quit
 
-Do as following steps to package source code and run program:
+#Steps#
+Follow the steps below to package the sourcecode and run the program:
 
 1.change directory to AddressBook
 
@@ -40,8 +41,7 @@ Please input your command:
 
 5.quit the application. please input 'quit'
 
-Note:
-
+#Note#
 1.when find a user's info, you can either input the number completed or partial
 
 2.when input quit to end the application, it will be store the info of user which you have add in phonebook.xml
